@@ -1,0 +1,11 @@
+bool checkPalindrome(string inputString)
+{
+    int max = inputString.Length;
+    int l = max/2;
+    
+    for (int i=0; i<l; i++)
+        if (inputString[i] != inputString[max-1-i])
+            return false;
+            
+    return true;
+}
