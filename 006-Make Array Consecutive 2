@@ -1,0 +1,27 @@
+int makeArrayConsecutive2(int[] statues) {
+    
+    int result=0;
+    int min=statues[0];
+    int max=statues[0];
+    
+    for (int i=0; i<statues.Length; i++)
+    {
+        if(statues[i] < min)
+        {    min = statues[i]; }
+        if(statues[i] > max)
+        {    max = statues[i]; }
+    }
+    
+    for (int i  min; i <= max; i++)
+    {
+        bool sw=false;
+        for (int j = 0; j < statues.Length; j++)
+        {
+            if (statues[j] == i)
+            {    sw=true; }
+        }
+        if(!sw)
+        {   result++; }
+    }
+    return result;
+}
