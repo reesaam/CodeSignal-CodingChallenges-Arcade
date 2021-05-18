@@ -1,0 +1,12 @@
+int centuryFromYear(int year)
+{
+    
+int cent = year/100;
+int y = year%100;
+
+if (y>0)
+    return (cent+1);
+else
+    return (cent);
+    
+}
