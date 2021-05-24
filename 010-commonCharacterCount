@@ -1,0 +1,33 @@
+int commonCharacterCount(string s1, string s2)
+{
+    List<char> c1 = new List<char>();
+    List<char> c2 = new List<char>();
+    
+    if (s1.Length > s2.Length)
+    {
+        c1 = s2.ToList();
+        c2 = s1.ToList();
+    }
+    else
+    {
+        c1 = s1.ToList();
+        c2 = s2.ToList();
+    }
+    
+    int counter = 0;
+    
+    for (int i=0; i<c1.Count;)
+    {
+        if (c2.Contains(c1[i]))
+        {
+            counter++;
+            char ch = c1[i];
+            c1.Remove(ch);
+            c2.Remove(ch);
+        }
+        else
+            i++;
+    }
+    
+    return counter;
+}
