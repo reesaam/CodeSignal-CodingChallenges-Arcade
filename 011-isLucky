@@ -1,0 +1,18 @@
+bool isLucky(int n)
+{
+    string str = n.ToString();
+    int half = str.Length / 2;
+    
+    int sum1 = 0;
+    int sum2 = 0;
+    
+    for (int i=0; i<half; i++)
+        sum1 += Convert.ToInt32(str[i]);
+    for (int i=half; i<str.Length; i++)
+        sum2 += Convert.ToInt32(str[i]);
+        
+    if (sum1 == sum2)
+        return true;
+    else
+        return false;
+}
