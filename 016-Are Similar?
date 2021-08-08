@@ -1,0 +1,16 @@
+bool areSimilar(int[] a, int[] b)
+{
+    List<int> stack1 = new List<int>();
+    List<int> stack2 = new List<int>();
+    for(int i=0;i<a.Length;i++)
+    {
+        if(a[i]!=b[i])
+        {
+            stack1.Add(a[i]);
+            
+            stack2.Add(b[i]);
+        }
+    }
+    return stack1.Count==0 || (stack1.Count==2 && stack1[0]==stack2[1] && stack1[1]==stack2[0]);
+    
+}
