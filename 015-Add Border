@@ -1,0 +1,22 @@
+string[] addBorder(string[] picture)
+{
+    int n = picture.Length+2;
+    int l = picture[0].Length+2;
+        
+    string starstring = "";
+    for (int i=0; i<l; i++)
+        starstring += "*";
+            
+    string[] border = new string[n];
+    
+    int j =0;
+    for (int i=0; i<n; i++)
+    {
+        if (i==0 || i==n-1)
+            border[i] = starstring;
+        else
+            border[i] = "*" + picture[j++] + "*";
+    }
+        
+    return border;
+}
