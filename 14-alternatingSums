@@ -1,0 +1,15 @@
+int[] alternatingSums(int[] a)
+{
+    int[] result = {0,0};
+    bool sw = true;
+    for(int i=0; i<a.Length; i++)
+    {
+        if (sw)
+            result[0] += a[i];
+        if(!sw)
+            result[1] += a[i];
+        sw = !sw;
+    }
+    
+    return result;
+}
