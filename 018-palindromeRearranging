@@ -1,0 +1,29 @@
+bool palindromeRearranging(string inputString)
+{
+    List<char> chlist = new List<char>();
+    List<int> counters = new List<int>();
+    int counter = 0;
+    
+    for (int i=0; i<inputString.Length; i++)
+    {
+        int z = chlist.IndexOf(inputString[i]);
+        if ( z == -1)
+        {
+            chlist.Add(inputString[i]);
+            counters.Add(1);
+        }
+        else
+        {
+            counters[z]++;
+        }
+    }
+    
+    for (int i=0; i<counters.Count; i++)
+        if(counters[i]%2 != 0)
+            counter++;
+    
+    if ((counter == 0) || (counter == 1 && inputString.Length % 2 != 0))
+        return true;
+    else
+        return false;
+}
